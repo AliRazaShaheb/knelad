@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import { Search } from '.';
 import { getCategories } from '../services';
 import Sidebar from './Sidebar';
+import knelad from '../public/knelad.svg'
+import Image from 'next/image';
 
 
 
@@ -23,9 +25,10 @@ const Header = () => {
         <>
             <div className="container px-5 mx-auto lg:px-28 mb-4 ">
                 <div className="w-full flex justify-between py-8 items-center">
-                    <div className="w-48">
+                    <div className="w-56 cursor-pointer">             
+                        <Image src={knelad} alt='knelad_logo' width="33px" height="33px"/>
                         <Link href="/">
-                            <span className="cursor-pointer text-4xl text-gray-700">
+                            <span className="text-3xl text-gray-700">
                                 kne<span className='font-bold'>Lad</span> 
                             </span>
                         </Link>
