@@ -12,7 +12,7 @@ const PostCard = ({post}) => {
                     className="object-top absolute w-full object-cover "
                 />
             </div>
-            <h1 className="text-center transition duration-500 hover:text-pink-500 text-2xl font-semibold mb-8">
+            <h1 className="mx-auto transition duration-500 hover:text-pink-500 text-2xl font-semibold mb-8 p-4 text-center">
                 <Link href={`/post/${post.slug}`} className="cursor-pointer ">
                     {post.title}
                 </Link>

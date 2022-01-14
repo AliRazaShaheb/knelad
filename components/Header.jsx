@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import React, {useState, useEffect} from 'react';
+import { Search } from '.';
 import { getCategories } from '../services';
 import Sidebar from './Sidebar';
+
 
 
 
@@ -28,6 +30,7 @@ const Header = () => {
                             </span>
                         </Link>
                     </div>
+                    
                     <div className="hidden md:flex justify-end w-full space-x-4 font-semibold text-gray-700 cursor-pointer">
                     {
                         categories.map((category)=>(
@@ -47,22 +50,24 @@ const Header = () => {
                         </svg>
                     </div>
                 </div>
-                {/* <div className="w-full text-center py-4 border-t border-b border-gray-400 flex flex-wrap items-center justify-center">
-                    { categories.map((category)=>(
-                        <Link href={`/category/${category.slug}`} key={category.slug}>
-                            <span className="align-middle text-gray-700 space-x-4 font-semibold cursor-pointer hover:text-red-700 uppercase ">
-                                {category.name}
-                                <span className='font-bold text-xl ml-2 mr-2'>•</span>
-                            </span>
-                        </Link>
-                    ))}
+                {/* <div className="w-full">
+                        <Search />
                 </div> */}
+                
             </div>
             {showSidebar && (
-            <div className='min-h-screen min-w-full absolute top-0 left-0 bg-gray-500/90 z-[1100]' onClick={()=>setShowSidebar(false)}>
+
+            <div className='min-h-screen flex justify-center items-center min-w-full absolute top-0 left-0  bg-indigo-900 z-[1100]' >
              <Sidebar categories={categories} setShowSidebar = {setShowSidebar}/>
+             <div className='absolute right-10 top-10 cursor-pointer' onClick={()=>setShowSidebar(false)} >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                <path fillRule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                <path fillRule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                </svg>
+            </div>
             </div>
             )}
+            
         </>
     )
 }

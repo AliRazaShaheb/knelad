@@ -28,3 +28,10 @@ const Categories = () => {
 }
 
 export default Categories
+
+export async function getStaticProps(){
+
+    return {
+        
+    }
+}

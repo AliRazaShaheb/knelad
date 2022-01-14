@@ -78,7 +78,7 @@ const PostDetail = ({post}) => {
             </div>
                 <div className="px-4 lg:px-0 post-section">
                     <h1 className='font-semibold text-[2rem] text-center xs:text-left'>{post.title}</h1>
-                    {console.log(post.content.raw.children)}
+                
                     {/* {post.content.raw.children.map((typeObj, index)=>{
                         const children = typeObj.children.map((item, itemIndex)=>{
                             return getContent(itemIndex, item.text, item)
@@ -97,6 +97,7 @@ const PostDetail = ({post}) => {
                             p: ({ children }) => <p className="leading-8 text-md">{children}</p>,
                             li: ({ children }) => <li className="leading-8 text-md">{children}</li>,
                             bold: ({ children }) => <strong>{children}</strong>,
+                            pre: ({ children }) => <code>{children}</code>,
                             
                         }}
                     />

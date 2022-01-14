@@ -4,7 +4,10 @@ import Link from 'next/link';
 import {getRecentPosts, getSimilarPosts} from '../services'
 
 const PostWidget = ({categories, slug}) => {
+
     const [relatedPost, setRelatedPost] = useState([])
+    
+
     useEffect(()=>{
         if(slug){
             getSimilarPosts(categories, slug)
@@ -24,27 +27,29 @@ const PostWidget = ({categories, slug}) => {
                 {slug ? 'Related Posts' : 'Recent Post'}
             </h3>
             {relatedPost.map((post)=>(
-                <div key={post.title} className='flex items-center w-full mb-4'>
-                        <div className="w-16 h-16 bg-gray-700 rounded-full overflow-hidden">
+                <div key={post.title} className='flex items-center w-full mb- relative '>
+                        <div className="w-12 h-12 bg-gray-700 rounded-full overflow-hidden absolute">
                             <img 
                                 src={post.featuredImage.url} 
                                 alt={post.title} 
-                                className='h-full'
+                                className='absolute h-full w-full object-cover '
                             />
                         </div>
-                        <div className="flex-grow ml-4">
+                        <div className="ml-14 my-2 lg:my-1">
                             <p className='text-gray-700 font-bold'>
                                 {moment(post.createdAt).format('MMM DD, YYYY')}
                             </p>
                             <Link href={`/post/${post.slug}`} key={post.title}>
-                                <p className='text-md text-gray-700  hover:text-blue-700 cursor-pointer'>{post.title}</p>
+                                <p className='text-md text-gray-700  hover:text-blue-700 cursor-pointer break-all'>{post.title}</p>
                             </Link>
                         </div>
-                    
                 </div>
             ))}
         </div>
     )
 }
+
+
+
 
 export default PostWidget
