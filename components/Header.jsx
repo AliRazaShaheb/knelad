@@ -12,6 +12,7 @@ import Image from 'next/image';
 
 const Header = () => {
     const [categories, setCategories] = useState([])
+    
     const [showSidebar, setShowSidebar] = useState(false)
     useEffect(()=>{
         getCategories()
@@ -63,11 +64,11 @@ const Header = () => {
             <div className='min-h-screen flex justify-center items-center min-w-full absolute top-0 left-0  bg-indigo-900 z-[1100]' >
              <Sidebar categories={categories} setShowSidebar = {setShowSidebar}/>
              <div className='absolute right-10 top-10 cursor-pointer' onClick={()=>setShowSidebar(false)} >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                <path fillRule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                </svg>
-            </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                    <path fillRule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                    </svg>
+                </div>
             </div>
             )}
             
@@ -77,3 +78,4 @@ const Header = () => {
 
 
 export default Header
+
