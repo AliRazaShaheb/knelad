@@ -7,7 +7,7 @@ const Layout = ({children}) => {
         <>
             <Header />
             <Head>
-                <title>arz prints</title>
+                <title>KneLad</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             {children}
