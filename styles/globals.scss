@@ -2,38 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 
 @mixin mobile {
-  @media (max-width:500px) {
+  @media (max-width: 500px) {
     @content;
   }
 }
 
-@layer components{
-  .bi-list{
+@layer components {
+  .bi-list {
     @apply w-10 h-10 md:hidden;
   }
-  .bi-x-lg{
+  .bi-x-lg {
     @apply w-10 h-10 fill-[#fff];
   }
-  .bi-search{
+  .bi-search {
     @apply w-6 h-6 fill-[#2e2e2e] ml-6 mr-4 cursor-pointer;
   }
 }
-
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   word-break: break-word;
-  @include mobile{
-    background: linear-gradient(90deg, rgba(237,237,237,1) 0%, rgb(215, 217, 224) 25%, rgba(232,218,218,1) 50%, rgb(234, 246, 221) 75%, rgba(237,237,237,1) 100%);
-  };
-  
-  &:before{
+  @include mobile {
+    background: linear-gradient(
+      90deg,
+      rgba(237, 237, 237, 1) 0%,
+      rgb(215, 217, 224) 25%,
+      rgba(232, 218, 218, 1) 50%,
+      rgb(234, 246, 221) 75%,
+      rgba(237, 237, 237, 1) 100%
+    );
+  }
+
+  &:before {
     content: "";
     width: 100%;
     height: 100vh;
@@ -41,11 +47,20 @@ body {
     // background: #d4bea1;
     // background: #cbd4a1;
     opacity: 0.5;
-    
-    background: linear-gradient(90deg, rgba(237,237,237,1) 0%, rgb(183, 185, 192) 15%, rgb(223, 246, 243) 30%,rgba(232,218,218,1) 50%, rgba(230,247,212,1) 70%, rgb(203, 233, 233) 80%,rgba(237,237,237,1) 90%);
+
+    background: linear-gradient(
+      90deg,
+      rgba(237, 237, 237, 1) 0%,
+      rgb(183, 185, 192) 15%,
+      rgb(223, 246, 243) 30%,
+      rgba(232, 218, 218, 1) 50%,
+      rgba(230, 247, 212, 1) 70%,
+      rgb(203, 233, 233) 80%,
+      rgba(237, 237, 237, 1) 90%
+    );
     // background-image: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b), url("../public/bg.jpg");
     // background-blend-mode:multiply;
-    
+
     position: fixed;
     left: 0;
     top: 0;
@@ -56,34 +71,32 @@ body {
   }
 }
 
-.text-shadow{
-  text-shadow: 0px 2px 0px rgb(0, 0, 0 / 30%);
-  
+.text-shadow {
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
-.adjacent-post{
-  & .arrow-btn{
+.adjacent-post {
+  & .arrow-btn {
     transition: width 300ms ease;
     width: 50px;
   }
-  &:hover{
-    & .arrow-btn{
+  &:hover {
+    & .arrow-btn {
       width: 60px;
     }
   }
 }
-.react-multiple-carousel__arrow{
-  z-index: 900; 
+.react-multiple-carousel__arrow {
+  z-index: 900;
 }
 .react-multi-carousel-list {
-  & .arrow-btn{
+  & .arrow-btn {
     transition: width 300ms ease;
     width: 50px;
-    &:hover{
+    &:hover {
       width: 60px;
     }
   }
-  
 }
 
 a {
@@ -95,62 +108,65 @@ a {
 * {
   box-sizing: border-box;
 }
-table,thead, tbody, tr, th, td{
+table,
+thead,
+tbody,
+tr,
+th,
+td {
   border: 1px solid black;
   text-align: center;
   padding: 5px;
 }
-table{
+table {
   width: 100%;
   margin-top: 15px;
   margin-bottom: 15px;
   word-break: break-all;
 }
-thead{
+thead {
   background-color: rgb(59, 59, 59);
   color: white;
 }
-ol{
+ol {
   list-style: decimal;
   margin-left: 1.5rem;
 }
-ul{
+ul {
   list-style: square;
   margin-left: 1.5rem;
 }
-.cert-rate{
+.cert-rate {
   color: rgb(0, 45, 192);
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
-.h-red{
+.h-red {
   color: rgb(209, 0, 0);
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
-.gen-pad{
+.gen-pad {
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
-.post-section{
-  a{
-    color:blue;
-    &:hover, :focus, :visited{
+.post-section {
+  a {
+    color: blue;
+    &:hover,
+    :focus,
+    :visited {
       color: purple;
     }
   }
 }
 
-
-
-
 //credit to animista
-
 
 // sidebar animation
 .slide-left {
-	-webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-left {
@@ -231,9 +247,9 @@ ul{
 }
 
 pre {
-  background-color: #D1D1D0;
+  background-color: #d1d1d0;
   overflow: auto;
-  font-family: 'Monaco', monospace;
+  font-family: "Monaco", monospace;
   padding: 0 1em;
   filter: sepia(90%);
 }
